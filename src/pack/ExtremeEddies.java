@@ -176,8 +176,8 @@ public class ExtremeEddies{
 		sb.append("'set lev 200'\n");
 		sb.append("'set csmooth on'\n");
 		sb.append("'set grads off'\n");
-		sb.append("'set lon "+(s.r.getLon()-20)+" "+(s.r.getLon()+20)+"'\n");
-		sb.append("'set lat "+(s.r.getLat()-18)+" "+(s.r.getLat()+18)+"'\n");
+		sb.append("'set lon "+(s.r.getXPos()-20)+" "+(s.r.getXPos()+20)+"'\n");
+		sb.append("'set lat "+(s.r.getYPos()-18)+" "+(s.r.getYPos()+18)+"'\n");
 		sb.append("'setvpage "+StatUtil.getVPageString(2,3,counter.get())+"'\n");
 		sb.append("'setlopts 5 0.16 5 5'\n");
 		sb.append("'set gxout shade2'\n");
@@ -200,8 +200,8 @@ public class ExtremeEddies{
 		sb.append("'set csmooth on'\n");
 		sb.append("'set grads off'\n");
 		sb.append("'set gxout shade2'\n");
-		sb.append("'set lon "+(s.r.getLon()-15)+" "+(s.r.getLon()+15)+"'\n");
-		sb.append("'set lat "+(s.r.getLat()-15)+" "+(s.r.getLat()+15)+"'\n");
+		sb.append("'set lon "+(s.r.getXPos()-15)+" "+(s.r.getXPos()+15)+"'\n");
+		sb.append("'set lat "+(s.r.getYPos()-15)+" "+(s.r.getYPos()+15)+"'\n");
 		sb.append("'define uu=oacres(u,u.2(t="+s.tstep+",lev="+lev+"))'\n");
 		sb.append("'define vv=oacres(u,v.2(t="+s.tstep+",lev="+lev+"))'\n");
 		sb.append("var='gava'\n");

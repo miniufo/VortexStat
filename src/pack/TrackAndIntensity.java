@@ -104,7 +104,7 @@ public class TrackAndIntensity{
 		
 		for(int l=0,L=ty.getTCount();l<L;l++){
 			float[][] buf=gdf.prepareXYBuffer("mslp",l+1,1);
-			mslp[l]=gdf.fetchXYBuffer(ty.getLongitude(l),ty.getLatitude(l),buf);
+			mslp[l]=gdf.fetchXYBuffer(ty.getXPosition(l),ty.getYPosition(l),buf);
 		}
 		
 		gdf.closeFile();
@@ -129,9 +129,9 @@ public class TrackAndIntensity{
 		for(int l=0;l<tcount;l++){
 			
 			String s=String.format("%7.2f  %7.2f  %8.2f  %8.2f  %6.2f  %d    %7.2f  %7.2f  %8.2f    %6.2f  %6.2f  %6.2f\n",
-					ty.getLongitude(l),ty.getLatitude(l),press[l],mslp[l]/100f,(mslp[l]/100f-press[l]),ty.getTime(l),
+					ty.getXPosition(l),ty.getYPosition(l),press[l],mslp[l]/100f,(mslp[l]/100f-press[l]),ty.getTime(l),
 					lons[l],lats[l],minP[l]/100f,
-					(lons[l]-ty.getLongitude(l)),(lats[l]-ty.getLatitude(l)),(minP[l]/100f-press[l])
+					(lons[l]-ty.getXPosition(l)),(lats[l]-ty.getYPosition(l)),(minP[l]/100f-press[l])
 				);
 		sb.append(s);
 		}

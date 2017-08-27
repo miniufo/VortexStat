@@ -101,8 +101,8 @@ public class WaveNumber{
 		sb.append("'open "+path+"VortexStat/"+ds+"/"+year+"/"+ty.getID()+"/WNStation_UVWT.ctl'\n");
 		sb.append("'enable print "+path+"VortexStat/"+ds+"/"+year+"/"+ty.getID()+"/plot/WNStation.gmf'\n\n");
 		
-		sb.append("olon="+ArrayUtil.allToString(ty.getLongitudes(),"'"," ","'")+"\n");
-		sb.append("olat="+ArrayUtil.allToString(ty.getLatitudes() ,"'"," ","'")+"\n");
+		sb.append("olon="+ArrayUtil.allToString(ty.getXPositions(),"'"," ","'")+"\n");
+		sb.append("olat="+ArrayUtil.allToString(ty.getYPositions() ,"'"," ","'")+"\n");
 		sb.append("'set lev 200'\n\n");
 		
 		sb.append("tt=1\n");

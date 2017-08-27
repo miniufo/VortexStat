@@ -52,7 +52,7 @@ public class EFCPDF{
 				s.weiCountP.value,s.weiCountP.yPos,s.weiCountP.zPos,s.weiMeanP.value,
 				s.grdCountN.value,s.grdCountN.yPos,s.grdCountN.zPos,
 				s.weiCountN.value,s.weiCountN.yPos,s.weiCountN.zPos,s.weiMeanN.value,
-				s,s.r.getLon(),s.r.getLat()
+				s,s.r.getXPos(),s.r.getYPos()
 			));
 		});
 		

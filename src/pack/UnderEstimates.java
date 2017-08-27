@@ -79,7 +79,7 @@ public class UnderEstimates{
 			r0[ptr]=s.mslp;
 			r1[ptr]=s.r.getDataValue(3); // prs
 			r2[ptr]=s.type.ordinal();
-			r3[ptr]=s.r.getLat();
+			r3[ptr]=s.r.getYPos();
 		}
 		
 		return re;
@@ -97,8 +97,8 @@ public class UnderEstimates{
 			
 			Record r=ty.getRecord(l);
 			
-			float lon=r.getLon();
-			float lat=r.getLat();
+			float lon=r.getXPos();
+			float lat=r.getYPos();
 			long  tim=r.getTime();
 			
 			samples[l].r   =r;
