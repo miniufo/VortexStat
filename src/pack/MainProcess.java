@@ -46,7 +46,8 @@ public final class MainProcess{
 		}catch(IOException e){ e.printStackTrace(); System.exit(0);}
 		
 		CsmDescriptor csd=(CsmDescriptor)DiagnosisFactory.parseContent(
-			ty.toCSMString(path+ty.getID()+".ctl",144,91,77,0.15f,-12.5f,1000)
+			//ty.toCSMString(path+ty.getID()+".ctl",144,91,77,0.15f,-12.5f,1000)
+			ty.interpolateToDT(7200).toCSMString(path+ty.getID()+".ctl",180,91,77,0.1f,-12.5f,1000)
 		).getDataDescriptor();
 		
 		TicToc.tic("Start simulating "+String.format("%10s",ty.getName())+" ("+ty.getID()+")");
@@ -369,7 +370,8 @@ public final class MainProcess{
 		
 		CsmDescriptor csd=(CsmDescriptor)DiagnosisFactory.parseContent(
 			//ty.toCSMString(path+ty.getID()+".ctl",144,91,77,0.15f,-12.5f,1000)
-			ty.toCSMString(path+ty.getID()+".ctl",150,161,77,0.05f,-12.5f,1000)
+			//ty.toCSMString(path+ty.getID()+".ctl",150,161,77,0.05f,-12.5f,1000)
+			ty.interpolateToDT(7200).toCSMString(path+ty.getID()+".ctl",180,91,77,0.1f,-12.5f,1000)
 		).getDataDescriptor();
 		
 		TicToc.tic("Start simulating "+String.format("%10s",ty.getName())+" ("+ty.getID()+")");

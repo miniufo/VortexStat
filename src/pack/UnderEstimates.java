@@ -90,7 +90,7 @@ public class UnderEstimates{
 		
 		Sample[] samples=new Sample[ty.getTCount()];
 		
-		float[][][] buf=gdf.prepareXYTBuffer("mslp",1);
+		Variable buf=gdf.prepareXYTBuffer("mslp",1);
 		
 		for(int l=0,L=ty.getTCount();l<L;l++){
 			samples[l]=new Sample();

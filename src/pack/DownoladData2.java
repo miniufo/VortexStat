@@ -31,7 +31,7 @@ public final class DownoladData2{
 	static final Predicate<Typhoon> cond=ty->{
 		int year=new MDate(ty.getTime(0)).getYear();
 		//return year==1985&&ty.getName().equalsIgnoreCase("Elena");
-		return year==2014&&(Integer.parseInt(ty.getID())==1409);
+		return year==2012&&(Integer.parseInt(ty.getID())==1208);
 	};
 	
 	static final DataSets ds=DataSets.JMA;
@@ -56,8 +56,8 @@ public final class DownoladData2{
 			String target=path+ds+"/"+year+"/"+id+"/"+ty.getID();
 			
 			if(prsData) return Stream.of(
-				new KeyValue(id+"_sfc",request2DInterim(   date,target+"sfcI.nc")),
-				new KeyValue(id+"_pl ",request3DPrsInterim(date,target+ "plI.nc"))
+				new KeyValue(id+"_sfc",request2DERA5(   date,target+"sfcERA5.nc")),
+				new KeyValue(id+"_pl ",request3DPrsERA5(date,target+ "plERA5.nc"))
 			);
 			else return Stream.of(
 				new KeyValue(id+"_pt ",request3DPTERA5( date,target+ "pt.grb"))
@@ -133,9 +133,9 @@ public final class DownoladData2{
 		request.put("levelist", "1000/975/950/925/900/875/850/825/800/775/750/700/650/600/550/500/450/400/350/300/250/225/200/175/150/125/100/70/50");
 		request.put("param"   , "z/t/q/u/v/w");	//
 		request.put("step"    , "0");
-		request.put("time"    , "00:00:00/06:00:00/12:00:00/18:00:00");
+		request.put("time"    , "00:00:00/02:00:00/04:00:00/06:00:00/08:00:00/10:00:00/12:00:00/14:00:00/16:00:00/18:00:00/20:00:00/22:00:00");
 		if(ds==DataSets.NHC) request.put("area"    , "63/231/-9/357"); // north/west/south/east
-		else request.put("area"    , "84/81/-15/222"); // north/west/south/east  (1517 TC: 84/81/-15/228)
+		else request.put("area"    , "54/81/-6/153"); // north/west/south/east  (1517 TC: 84/81/-15/228)
 		request.put("resol"   , "av");
 		request.put("grid"    , "0.3/0.3");
 		request.put("format"  , "netcdf");
@@ -180,10 +180,10 @@ public final class DownoladData2{
 		request.put("levelist" , "265/275/285/300/315/330/350/370/395/430");
 		request.put("param"   , "u/v/d/vo/mont/pres/q");	//
 		request.put("step"    , "0");
-		request.put("time"    , "00:00:00/06:00:00/12:00:00/18:00:00");
+		request.put("time"    , "00:00:00/02:00:00/04:00:00/06:00:00/08:00:00/10:00:00/12:00:00/14:00:00/16:00:00/18:00:00/20:00:00/22:00:00");
 		request.put("type"    , "an");	// an/fc
 		if(ds==DataSets.NHC) request.put("area"    , "63/231/-9/357"); // north/west/south/east
-		else request.put("area"    , "84/81/-15/228"); // north/west/south/east  (1517 TC: 84/81/-15/228)
+		else request.put("area"    , "84/81/-15/222"); // north/west/south/east  (1517 TC: 84/81/-15/228)
 		request.put("resol"   , "av");
 		request.put("grid"    , "0.3/0.3");
 		request.put("format"  , "netcdf");
@@ -226,9 +226,9 @@ public final class DownoladData2{
 		request.put("levtype" , "sfc");	// ml/sfc/pl
 		request.put("param"   , "z/msl/10u/10v/sp/sst");	//sshf/slhf/2t/
 		request.put("step"    , "0");
-		request.put("time"    , "00:00:00/06:00:00/12:00:00/18:00:00");
+		request.put("time"    , "00:00:00/02:00:00/04:00:00/06:00:00/08:00:00/10:00:00/12:00:00/14:00:00/16:00:00/18:00:00/20:00:00/22:00:00");
 		if(ds==DataSets.NHC) request.put("area"    , "63/231/-9/357"); // north/west/south/east
-		else request.put("area"    , "84/81/-15/222"); // north/west/south/east  (1517 TC: 84/81/-15/228)
+		else request.put("area"    , "54/81/-6/153"); // north/west/south/east  (1517 TC: 84/81/-15/228)
 		request.put("resol"   , "av");
 		request.put("grid"    , "0.3/0.3");
 		request.put("format"  , "netcdf");

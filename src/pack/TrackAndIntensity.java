@@ -12,6 +12,7 @@ import miniufo.database.AccessBestTrack;
 import miniufo.database.AccessBestTrack.DataSets;
 import miniufo.descriptor.DataDescriptor;
 import miniufo.diagnosis.DiagnosisFactory;
+import miniufo.diagnosis.Variable;
 import miniufo.lagrangian.Typhoon;
 import miniufo.util.GridDataFetcher;
 import miniufo.util.TCTracker;
@@ -103,7 +104,7 @@ public class TrackAndIntensity{
 		GridDataFetcher gdf=new GridDataFetcher(dd);
 		
 		for(int l=0,L=ty.getTCount();l<L;l++){
-			float[][] buf=gdf.prepareXYBuffer("mslp",l+1,1);
+			Variable buf=gdf.prepareXYBuffer("mslp",l+1,1);
 			mslp[l]=gdf.fetchXYBuffer(ty.getXPosition(l),ty.getYPosition(l),buf);
 		}
 		

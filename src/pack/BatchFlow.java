@@ -19,7 +19,7 @@ public class BatchFlow{
 	//
 	static final Predicate<Typhoon> cond=ty->{
 		int year=new MDate(ty.getTime(0)).getYear();
-		return year==2014&&(Integer.parseInt(ty.getID())==1409);
+		return year==2012&&(Integer.parseInt(ty.getID())==1208);
 	};
 	
 	static final DataSets ds=DataSets.JMA;
