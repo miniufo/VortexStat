@@ -58,10 +58,10 @@ public class Discriminant{
 		});
 		
 		Variable[] all=mapToVariables(samples,s->{return true;});
-		Variable[] TD =mapToVariables(samples,s->{return s.r.getDataValue(4)==0;});
-		Variable[] TS =mapToVariables(samples,s->{return s.r.getDataValue(4)==1;});
-		Variable[] TY =mapToVariables(samples,s->{return s.r.getDataValue(4)==2;});
-		Variable[] EC =mapToVariables(samples,s->{return s.r.getDataValue(4)==3;});
+		Variable[] TD =mapToVariables(samples,s->{return s.r.getDataValue(Typhoon.Type)==0;});
+		Variable[] TS =mapToVariables(samples,s->{return s.r.getDataValue(Typhoon.Type)==1;});
+		Variable[] TY =mapToVariables(samples,s->{return s.r.getDataValue(Typhoon.Type)==2;});
+		Variable[] EC =mapToVariables(samples,s->{return s.r.getDataValue(Typhoon.Type)==3;});
 		
 		CtlDataWriteStream cdws=new CtlDataWriteStream("E:/Data/VortexStat/JMA/Stat/DiscriminantAll.dat");
 		cdws.writeData(ArrayUtil.concatAll(Variable.class,all,TD,TS,TY,EC)); cdws.closeFile();

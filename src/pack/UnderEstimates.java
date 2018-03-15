@@ -77,7 +77,7 @@ public class UnderEstimates{
 		int ptr=0;
 		for(Sample s:samples){
 			r0[ptr]=s.mslp;
-			r1[ptr]=s.r.getDataValue(3); // prs
+			r1[ptr]=s.r.getDataValue(Typhoon.Type); // prs
 			r2[ptr]=s.type.ordinal();
 			r3[ptr]=s.r.getYPos();
 		}

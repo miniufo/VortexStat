@@ -247,7 +247,7 @@ public class ExtremeEddies{
 				for(int j=0;j<y;j++) buf[k][j]=v.getData()[k][j][0][l];
 				
 				s.name=ty.getName();
-				s.type=Typhoon.getType(ty.getRecord(l).getDataValue(4));
+				s.type=Typhoon.getType(ty.getRecord(l).getDataValue(Typhoon.Type));
 				s.tstep=l+1;
 				s.ID=ty.getID();
 				s.r =ty.getRecord(l);
